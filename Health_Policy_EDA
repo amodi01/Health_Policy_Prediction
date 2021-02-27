@@ -1812,10 +1812,154 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "X_train1=pd.read_pickle(\"X_train_1\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "X_test1=pd.read_pickle(\"X_test_1\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "28464    1601\n",
+       "31623     247\n",
+       "27487     123\n",
+       "24757    2895\n",
+       "7270     1230\n",
+       "         ... \n",
+       "31629     671\n",
+       "50739    2265\n",
+       "14020     160\n",
+       "49037    5094\n",
+       "29856    2502\n",
+       "Name: Region_Code, Length: 35617, dtype: int64"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "X_train1['Region_Code']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a=X_train1['Region_Code'].apply(lambda x: np.int(x))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "28464    1601\n",
+       "31623     247\n",
+       "27487     123\n",
+       "24757    2895\n",
+       "7270     1230\n",
+       "         ... \n",
+       "31629     671\n",
+       "50739    2265\n",
+       "14020     160\n",
+       "49037    5094\n",
+       "29856    2502\n",
+       "Name: Region_Code, Length: 35617, dtype: int64"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting category-encoders\n",
+      "  Downloading category_encoders-2.2.2-py2.py3-none-any.whl (80 kB)\n",
+      "\u001b[K     |████████████████████████████████| 80 kB 1.1 MB/s eta 0:00:011\n",
+      "\u001b[?25hRequirement already satisfied: numpy>=1.14.0 in /home/amodi/.local/lib/python3.8/site-packages (from category-encoders) (1.19.3)\n",
+      "Requirement already satisfied: scikit-learn>=0.20.0 in /home/amodi/.local/lib/python3.8/site-packages (from category-encoders) (0.24.1)\n",
+      "Requirement already satisfied: scipy>=1.0.0 in /home/amodi/.local/lib/python3.8/site-packages (from category-encoders) (1.6.0)\n",
+      "Requirement already satisfied: patsy>=0.5.1 in /home/amodi/anaconda3/lib/python3.8/site-packages (from category-encoders) (0.5.1)\n",
+      "Requirement already satisfied: pandas>=0.21.1 in /home/amodi/.local/lib/python3.8/site-packages (from category-encoders) (1.2.0)\n",
+      "Requirement already satisfied: statsmodels>=0.9.0 in /home/amodi/anaconda3/lib/python3.8/site-packages (from category-encoders) (0.11.1)\n",
+      "Requirement already satisfied: threadpoolctl>=2.0.0 in /home/amodi/.local/lib/python3.8/site-packages (from scikit-learn>=0.20.0->category-encoders) (2.1.0)\n",
+      "Requirement already satisfied: joblib>=0.11 in /home/amodi/.local/lib/python3.8/site-packages (from scikit-learn>=0.20.0->category-encoders) (1.0.0)\n",
+      "Requirement already satisfied: six in /home/amodi/anaconda3/lib/python3.8/site-packages (from patsy>=0.5.1->category-encoders) (1.15.0)\n",
+      "Requirement already satisfied: pytz>=2017.3 in /home/amodi/anaconda3/lib/python3.8/site-packages (from pandas>=0.21.1->category-encoders) (2020.1)\n",
+      "Requirement already satisfied: python-dateutil>=2.7.3 in /home/amodi/anaconda3/lib/python3.8/site-packages (from pandas>=0.21.1->category-encoders) (2.8.1)\n",
+      "Installing collected packages: category-encoders\n",
+      "Successfully installed category-encoders-2.2.2\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install category-encoders"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": null,
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "#https://medium.com/analytics-vidhya/feature-engineering-method-with-code-examples-b016fc9f1e9a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Import the libraries\n",
+    "import category_encoders as ce\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import category_encoders as ce\n",
+    "cat_features = ['Region_Code']"
+   ]
   }
  ],
  "metadata": {
